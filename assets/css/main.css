@@ -999,7 +999,7 @@ cursor: pointer; }
     padding-top: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0 -17px;
+    background-position:center;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
