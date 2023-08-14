@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/base.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/grid.css">
+        <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.min.css">
     <title>MinaShop</title>
 </head>
@@ -16,10 +18,10 @@
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
+            <div class="grid wide">
                 <nav class="navbar">
                     <ul class="navbar__list">
-                        <li class="navbar__item navbar__item--has-qr navbar__item--separate">
+                        <li class="navbar__item navbar__item--has-qr navbar__item--separate hide-on-mobile-table">
                             Tải ứng dụng MinaShop
                             <!-- qr -->
                             <div class="navbar__qr">
@@ -36,7 +38,7 @@
                             <i class="fa-solid fa-phone" style="margin-right: 4px;"></i>0276989898
                         </li>
                         <li class="navbar__item">
-                            <span class="navbar__title--no-pointer">Kết nối</span>
+                            <span class="navbar__title--no-pointer hide-on-mobile-table">Kết nối</span>
                             <a href="" class="navbar__icon-link">
                                 <i class="navbar__icon fa-brands fa-facebook"></i>
                             </a>
@@ -48,7 +50,7 @@
                     </ul>
 
                     <ul class="navbar__list">
-                        <li class="navbar__item navbar__item-has-notify">
+                        <li class="navbar__item navbar__item-has-notify hide-on-mobile-table">
                             <a href="" class="navbar__item-link">
                                 <i class="navbar__icon fa-regular fa-bell"></i>
                                 Thông báo
@@ -97,18 +99,18 @@
                             </div>
                         </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__item-link">
+                            <a href="./PriceTable/index.html" class="navbar__item-link hide-on-mobile-table">
                                 <i class="navbar__icon fa-regular fa-circle-question"></i>
                                 Trợ giúp</a>
                         </li>
-                        <li class="navbar__item js-auth-reg navbar__item--strong navbar__item--separate">Đăng ký</li>
+                        <li class="navbar__item js-auth-reg navbar__item--strong navbar__item--separate hide-on-mobile-table">Đăng ký</li>
                         <li class="navbar__item js-auth-log navbar__item--strong">Đăng nhập</li>
                         <li class="navbar__item navbar__user">
                             <img src="https://i1.sndcdn.com/avatars-000587702943-j75w0b-t500x500.jpg" alt="" class="navbar__user-img">
-                            <span class="navbar__user-name">Minh Nhat Phan - Dev</span>
+                            <span class="navbar__user-name hide-on-mobile-table">Minh Nhat Phan - Dev</span>
 
                             <ul class="navbar__user-menu">
-                                <li class="navbar__user-item navbar__user-item--separate"><a href="">Thông tin:</a></li>
+                                <li class="navbar__user-item navbar__user-item--separate"><a href="./PriceTable/index.html">Thông tin:</a></li>
                                 <li class="navbar__user-item"><a href="">- Đẹp trai</a></li>
                                 <li class="navbar__user-item"><a href="">- Cute</a></li>
                                 <li class="navbar__user-item "><a href="">- KHOAI TO :))</a></li>
@@ -119,13 +121,19 @@
                 </nav>
                 <!-- search -->
                 <div class="header-with-search">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
                     <div class="header__logo">
                         <a href="/" class="header__logo-link">
                             <img src="https://freepngimg.com/thumb/dragon_ball/23374-9-dragon-ball-logo-file.png" alt="" class="header__logo-img">
                         </a>
                     </div>
 
-                    <div class="header__search">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Tìm kiếm...">
                             
@@ -294,12 +302,31 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                    <!-- <i class="header__sort-link-icon fa-solid fa-angle-top"></i>
+                    <i class="header__sort-link-icon fa-solid fa-angle-bottom"></i> -->
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app-content">
-                    <div class="gird__col-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app-content">
+                    <div class="col l-2 m-0 c-0">
                      <nav class="category">
                      
                          <h3 class="category-heading">DANH MỤC</h3>
@@ -320,8 +347,8 @@
                      </nav>
                  </div>
      
-                 <div class="grid__col-10">
-                    <div class="home-filter">
+                 <div class="col l-10 m-12 c-12">
+                    <div class="home-filter hide-on-mobile-table">
                         <span class="home-filter__label">Sắp xếp theo:</span>
                         <button class="btn home-filter__btn">Phổ biến</button>
                         <button class="btn home-filter__btn btn--primary">Mới nhất</button>
@@ -356,10 +383,51 @@
                         </div>
                     </div>
 
+                    <nav class="mobile-catelogy">
+                        <ul class="mobile-catelogy__list">
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ2</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ3</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ4</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ God</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ Blue</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Goku SSJ Ultra Instinct</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Vegeta</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Frieza</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Piccolo</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Buu</a>
+                            </li>
+                            <li class="mobile-catelogy__item">
+                                <a href="" class="mobile-catelogy__link">Cell</a>
+                            </li>
+                        </ul>
+                    </nav>
+
                     <div class="home-product"> 
-                        <div class="grid__row">
+                        <div class="row sm-gutter">
                             <!-- product-item  -->
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <!-- doi div thanh a , xem 163 hoan thien san pham -->
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
@@ -397,7 +465,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -434,7 +502,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -471,7 +539,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -508,7 +576,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -545,7 +613,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -582,7 +650,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -619,7 +687,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -656,7 +724,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -693,7 +761,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="grid__col-2-4">
+                            <div class="col l-2-4 m-4 c-6 ">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://dbshop.vn/wp-content/uploads/2020/03/Theme-Works-1-%E2%80%93-Android-18-5.jpg);"></div>
                                     <h5 class="home-product-item__name">Yi Sin x PT Studio – Android 18</h5>
@@ -787,9 +855,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__col-2-4">
+            <div class="grid wide footer-mobile">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -804,7 +872,7 @@
                         </ul>
                         
                     </div>
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">VỀ MINA-SHOP</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -818,7 +886,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">THANH TOÁN</h3>
                         <ul class="footer-list">
 
@@ -888,7 +956,7 @@
 
                         </ul>
                     </div>
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -911,21 +979,21 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-8 c-6 ">
                         <h3 class="footer__heading">TẢI ỨNG DỤNG MINA-SHOP NGAY THÔI</h3>
                         <div class="footer__load">
-                            <img src="/assets/img/MOJO_AI_A cute beautyful girl and fluffy under cloud with .png" 
+                            <img src="./assets/img/MOJO_AI_A cute beautyful girl and fluffy under cloud with .png" 
                             alt="" class="footer__load-img-qr">
                             <div class="footer__load-apps">
-                                <img src="/assets/img/google_play.png" alt="" class="footer__load-app-img">
-                                <img src="/assets/img/app_store.png" alt="" class="footer__load-app-img">
+                                <img src="./assets/img/google_play.png" alt="" class="footer__load-app-img">
+                                <img src="./assets/img/app_store.png" alt="" class="footer__load-app-img">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer__bottom">
+            <div class="footer__bottom c-12">
                 <div class="grid wide">
                     <ul class="footer__policy-list">
                         <li class="footer__policy-list-item">
@@ -1071,6 +1139,7 @@
                         <button class="btn js-modal-close-l btn--normal auth-form__control-back">TRỞ LẠI</button>
                         <button class="btn btn--primary">ĐĂNG NHẬP</button>
                     </div>
+                    
                 </div>
 
                 <div class="auth-form__socials">
